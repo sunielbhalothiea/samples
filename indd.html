@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Just One Question ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff6a88, #ff99ac);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1, p {
+  color: white;
+}
+
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#yes {
+  background: #28a745;
+  color: white;
+}
+
+#yes:hover {
+  transform: scale(1.3);
+}
+
+#no {
+  background: #dc3545;
+  color: white;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hey!</h1>
+<p>There’s something important I want to ask you today…</p>
+
+<h1>Will you be my ladli sali?</h1>
+
+<div class="buttons">
+  <button id="yes" onclick="yesClicked()">YES 💖</button>
+  <button id="no" onmouseover="moveNo()">NO 🙈</button>
+</div>
+
+<script>
+function moveNo() {
+  const noBtn = document.getElementById("no");
+  const container = document.querySelector(".buttons");
+
+  const maxX = container.clientWidth - noBtn.offsetWidth;
+  const maxY = container.clientHeight - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <h1>Yayyyy! 💕🥰</h1>
+    <p>You just made yourself eligible to gift me something.<br>
+    Happy Propose Day, now go get me an expensive watch</p>
+  `;
+}
+</script>
+
+</body>
+</html>
